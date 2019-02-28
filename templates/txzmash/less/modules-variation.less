@@ -1,0 +1,88 @@
+//color mixin
+.white{
+    color: #fff;
+    text-shadow: 1px 1px 1px #444;
+}
+.black{
+    color: #333;
+    text-shadow: 1px 1px 1px #fff;
+}
+/* Module Variations
+==================================================*/
+
+/* Block style (box) */
+.box1{ background-color: #fff; }
+.box2{
+  background-color: #34495e;
+  color: #fff;
+}
+.box3{ 
+  background-color: #95a5a6;
+  color: #fff;
+}
+.box4{
+  background-color: #B3A4A1;
+  color: #fff;
+}
+.box-bordered{
+  border: 1px solid #ddd;
+}
+// Mapped BS alert classes
+.box-alert{
+  background-color: #FCF8E3;
+  border: 1px solid #FBEED5;
+  color: #C09853;
+}
+.box-info{
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  color: #3A87AD;
+}
+.box-success{
+  background-color: #DFF0D8;
+  border-color: #D6E9C6;
+  color: #468847;
+}
+.box-error{
+  background-color: #F2DEDE;
+  border-color: #EED3D7;
+  color: #B94A48;
+}
+
+/* Title Style
+------------------------------------*/
+.title{
+  padding: 10px 0;
+  font-size: 24px;
+  line-height: 23px;
+  position: relative;
+}
+[class*="title"] .title{ margin: -15px -15px 15px -15px; padding: 15px; }
+
+.title1 .title{
+  background-color: darken(#34495e, 5%);
+  color: #fff;
+}
+.title2 .title{
+  background-color: lighten(#95a5a6, 5%);
+  color: #fff;
+}
+.title3 .title{
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  .box-shadow(0 1px 1px #fff);
+}
+
+// Create bottom border element
+.title4 .title:after{
+  .box1();
+  height: 4px;
+  width: auto;
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* Box and title style combo
+---------------------------------*/

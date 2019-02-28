@@ -1,0 +1,206 @@
+/* Component - Mega menu
+========================================================================== */
+// Dimension
+@menu-line-height:                          40px;
+@menu-padding-horizontal:                   15px;
+@menu-font-size:                            14px;
+@menu-font-weight:                          normal;
+
+// Style
+@menu-color:                                #fff;
+@menu-hover-background:                     rgba(0,0,0,0.3);
+@menu-hover-color:                          #fff;
+@menu-onclick-background:                   @menu-hover-background;
+@menu-onclick-color:                        @menu-hover-color;
+@menu-active-background:                    @menu-hover-background;
+@menu-active-color:                         @menu-hover-color;
+@menu-subtitle-font-size:                   10px;
+@menu-subtitle-offset:                      7px;
+
+// Level 1
+@menu-level1-item-background:               @menu-hover-background;
+
+// Dropdown
+@dropdown-z-index:                          1000;
+@dropdown-background:                       '';
+
+// Animation - Located on animation.less file
+@dropdown-animation:                        flipin-x;
+@dropdown-animation-nested:                 slide-bottom-fixed;
+
+/* Component - Split menu
+========================================================================== */
+@split-h-item-hover-background: 			@menu-hover-background;
+@split-h-hover-color: 						@menu-hover-color;	
+@split-h-dropdown-background: 				@dropdown-background;
+@split-h-level1-hover-background : 			@menu-level1-item-background;
+@split-h-level1-hover-color : 				@menu-hover-color;
+
+/* Component - Offcanvas
+========================================================================== */
+// Off-canvas
+@offcanvas-z-index:								1010;
+@offcanvas-background:							rgba(0,0,0,0.3);
+@offcanvas-bar-width:							270px;
+@offcanvas-bar-background:						#333;
+
+@offcanvas-item-color: 							#88898E;
+@offcanvas-item-hover-color: 					#3A3B40;
+@offcanvas-l1-item-color: 						rgba(255, 255, 255, 0.8);
+@offcanvas-l1-item-background: 					#3A3B40;
+@offcanvas-l1-item-active-color: 				#fff;
+
+
+// Import Base Menu component with Offcanvas
+@import "../../../libraries/expose/interface/less/menu.less";
+
+
+/* Implement hooks
+========================================================================== */
+// Menu Wrapper
+.hook-menu() { 
+    //float: right; 
+    color: #222; 
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+// Menu Item - Implement on all <a>
+.hook-menu-item() {
+    background: none;
+    color: #222;
+    text-align: center;
+    text-transform: uppercase;
+}
+// Hover
+.hook-menu-item-hover() {}
+// OnClick
+.hook-menu-item-onclick() {}
+// Active
+.hook-menu-item-active() {
+    background: none;
+    color: #000;
+}
+
+// Icon font
+.hook-menu-icon() {}
+.hook-menu-icon-hover() {}
+
+// Modifier: Level 1 - Siblings of ul.l1
+//================================================================
+.hook-menu-level1() {
+    //margin-right: 10px;
+    &:hover > a,
+    &.active > a{ }
+}
+
+// Component - Dropdown 
+// Do not apply margin/padding here use Column instead
+//===============================================================
+.hook-menu-dropdown() {}
+// Dropdown : Hover - Animation can be applied here
+.hook-menu-dropdown-hover() {}
+// Dropdown - Nested Hover - Animation can be applied here
+.hook-menu-nested-dropdown-hover() {}
+
+// Sub-objects: 'grouped'
+//==============================================================
+.hook-menu-grouped() {
+	.box-shadow(~'0 0 6px rgba(0,0,0,0.4)');
+}
+
+// Sub-objects: 'column'
+// Apply padding/margin if needed
+//===============================================================
+.hook-menu-column() {
+    //padding: 10px;
+} 
+
+// Sub-objects: `Image`
+.hook-menu-item-image() {}
+// Sub-objects: `Subtitle`
+.hook-menu-item-subtitle() {}
+
+/* Off-canvas hooks
+========================================================================== */
+.hook-offcanvas() {
+}
+
+.hook-offcanvas-bar() {
+}
+
+
+
+
+.hook-offcanvas-block() {}
+
+
+.uk-offcanvas-page{ margin-left: 0 !important; }
+.uk-offcanvas {
+    background: rgba(0, 0, 0, 0.95);
+    overflow-y: auto;
+    
+    .uk-offcanvas-bar {
+        position: relative;
+        margin: 0 auto;
+        width: 500px;
+        background: none;
+
+        .translate(0%, -100%);
+    }
+    
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f00d";
+        position: absolute;
+        right: 40px;
+        top: 35px;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        
+    }
+}
+
+.uk-offcanvas.uk-active .uk-offcanvas-bar.uk-offcanvas-bar-show {
+    -webkit-transform: translateY(30%);
+    transform: translateY(30%);
+}
+
+.uk-offcanvas .ex-menu > ul.l1 > li {
+    padding: 10px 0;
+}
+
+.uk-offcanvas .ex-menu > ul.l1 > li > a {
+    color: #fff;
+    border-bottom: none;
+    box-shadow: none;
+    font-size: 30px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.uk-offcanvas .ex-menu > ul.l1 > li.active > a,
+.uk-offcanvas .ex-menu > ul.l1 > li:hover > a,
+.uk-offcanvas .ex-menu > ul.l1 > li:focus > a {
+    background: none;
+    color: #2ab966;
+}
+
+.uk-offcanvas .ex-menu > ul.l1 > li:hover > a {
+    font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

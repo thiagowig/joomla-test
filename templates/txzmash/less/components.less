@@ -1,0 +1,67 @@
+/*----------------------------------
+        Component Area
+-----------------------------------*/
+#main{}
+
+/* Joomla - Article
+------------------------------*/
+#component{
+    //Column layout
+    .articles-row {margin-bottom: 10px;}
+      [class*='cols'] > [class*='col-']{float: left; padding: 0;}
+      .cols-1 > [class*='col-'] {display: block;float: none;margin: 0;}
+      .cols-2 > [class*='col-'] {width: 50%;}
+      .cols-3 > [class*='col-'] {float: left;width: 33.3%;}
+      .cols-4 > [class*='col-'] {width: 25%;}
+      article{margin: 0 10px 20px;}
+
+    .title{
+      font-size: 24px;
+      line-height: 30px;
+      padding: 0;
+        
+        a { 
+            color: #222;
+            font-weight: normal;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+            
+            &:hover {
+                color: #2ab966;
+            }
+        }
+    }
+    .block{}
+    // Tools
+    .article-tools{ padding-bottom: 20px; margin-bottom: 20px; }
+    //Icons
+    .article-bg{padding-bottom: 0; border: 0;}
+    .actions { 
+      list-style: none; 
+      a{ display:inline-block; }
+      img{ display: inline-block; }
+    }
+    
+    // Editing
+    .edit .formelm{float: left; width: 70%;margin-top: 10px}
+    .edit .formelm label{float: left;line-height: 22px; width:110px}
+    .edit textarea{margin-top: 10px;}
+    .edit .pull-left{width: 50%}
+    .CodeMirror-wrapping{box-sizing: border-box;margin-top: 20px}
+    .edit .formelm-buttons{ margin-top: 10px;}
+    .button2-left {float: left;margin-right: 5px;}
+    #editor-xtd-buttons{margin-top: 15px; height: 32px;}
+
+    // Pagination
+    .pagination{
+      padding: 0 10px;
+      ul{.box-shadow(none);}
+      a, span{ background: none; .border-radius(0px)}
+    }
+
+    // Contact page
+    #contact-slider { padding-bottom: 9px; }
+    #contact-slider h3{ font-size: inherit; line-height: inherit; margin: 0; padding: 0; }
+}
